@@ -1,11 +1,13 @@
-# 🏗 Scaffold-ETH 2
+# 🏗 Syron
 
-🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
+🧪 An open-source, decentralised and permissionless stablecoin on the Ethereum blockchain.
+
+It's designed with Scaffold-ETH to make it easier for developers to build and deploy this decentralised application with smart contracts and user interfaces that interact with those contracts.
 
 ⚙️ Built using NextJS, RainbowKit, Hardhat, Wagmi, and Typescript.
 
-- ✅ **Contract Hot Reload**: Your frontend auto-adapts to your smart contract as you edit it.
-- 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
+- ✅ **Contract Hot Reload**: The frontend auto-adapts to the smart contracts.
+- 🔥 **Burner Wallet & Local Faucet**: Quickly test the application with a burner wallet and local faucet.
 - 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
 
 ## Contents
@@ -31,13 +33,13 @@ Before you begin, you need to install the following tools:
 
 ## Quickstart
 
-To get started with Scaffold-ETH 2, follow the steps below:
+To get started, follow the steps below:
 
 1. Clone this repo & install dependencies
 
 ```
-git clone https://github.com/scaffold-eth/scaffold-eth-2.git
-cd scaffold-eth-2
+git clone https://github.com/tralkan/syron.git
+cd syron
 yarn install
 ```
 
@@ -63,17 +65,17 @@ This command deploys a test smart contract to the local network. The contract is
 yarn start
 ```
 
-Visit your app on: `http://localhost:3000`. You can interact with your smart contract using the contract component or the example ui in the frontend. You can tweak the app config in `packages/nextjs/scaffold.config.ts`.
+Visit your app on: `http://localhost:3000`. You can interact with the smart contracts using the contract component or the example ui in the frontend. You can tweak the app config in `packages/nextjs/scaffold.config.ts`.
 
 Run smart contract test with `yarn hardhat:test`
 
-- Edit your smart contract `YourContract.sol` in `packages/hardhat/contracts`
-- Edit your frontend in `packages/nextjs/pages`
-- Edit your deployment scripts in `packages/hardhat/deploy`
+- Read the smart contracts in `packages/hardhat/contracts`
+- Edit the frontend in `packages/nextjs/pages`
+- See deployment scripts in `packages/hardhat/deploy`
 
-## Deploying your Smart Contracts to a Live Network
+## Deploying to a Live Network
 
-Once you are ready to deploy your smart contracts, there are a few things you need to adjust.
+Once you are ready to deploy the dapp, there are a few things you need to adjust.
 
 1. Select the network
 
@@ -100,15 +102,15 @@ You can generate a random account / private key with `yarn generate` or add th
 
 3. Deploy your smart contract(s)
 
-Run the command below to deploy the smart contract to the target network. Make sure to have some funds in your deployer account to pay for the transaction.
+Run the command below to deploy the smart contracts to the target network. Make sure to have some funds in your deployer account to pay for the transaction.
 
 ```
 yarn deploy --network network_name
 ```
 
-4. Verify your smart contract
+4. Verify smart contracts
 
-You can verify your smart contract on Etherscan by running:
+You can verify on Etherscan by running:
 
 ```
 yarn verify --network network_name
@@ -124,11 +126,11 @@ If you want to redeploy to the same production URL you can run `yarn vercel --pr
 
 **Make sure your `packages/nextjs/scaffold.config.ts` file has the values you need.**
 
-## Interacting with your Smart Contracts: SE-2 Custom Hooks
+## Interacting with the Smart Contracts: SE-2 Custom Hooks
 
-Scaffold-ETH 2 provides a collection of custom React hooks designed to simplify interactions with your deployed smart contracts. These hooks are wrappers around `wagmi`, automatically loading the necessary contract ABI and address. They offer an easy-to-use interface for reading from, writing to, and monitoring events emitted by your smart contracts.
+Scaffold-ETH 2 provides a collection of custom React hooks designed to simplify interactions with deployed smart contracts. These hooks are wrappers around `wagmi`, automatically loading the necessary contract ABI and address. They offer an easy-to-use interface for reading from, writing to, and monitoring events emitted by your smart contracts.
 
-To help developers get started with smart contract interaction using Scaffold-ETH 2, we've provided the following custom hooks:
+To help developers get started with smart contract interaction using Scaffold-ETH 2, the following custom hooks are available:
 
 - [useScaffoldContractRead](#usescaffoldcontractread): for reading public variables and getting data from read-only functions of your contract.
 - [useScaffoldContractWrite](#usescaffoldcontractwrite): for sending transactions to your contract to write data or perform an action.
@@ -137,11 +139,11 @@ To help developers get started with smart contract interaction using Scaffold-ET
 - [useDeployedContractInfo](#usedeployedcontractinfo): for fetching details from your contract, including the ABI and address.
 - [useScaffoldContract](#usescaffoldcontract): for obtaining a contract instance that lets you interact with the methods of your deployed smart contract.
 
-These hooks offer a simplified and streamlined interface for interacting with your smart contracts. If you need to interact with external contracts, you can use `wagmi` directly, or add external contract data to your `deployedContracts.ts` file.
+These hooks offer a simplified and streamlined interface for interacting with the smart contracts. If you need to interact with external contracts, you can use `wagmi` directly, or add external contract data to the the `deployedContracts.ts` file.
 
 ### useScaffoldContractRead:
 
-Use this hook to read public variables and get data from read-only functions of your smart contract.
+Use this hook to read public variables and get data from read-only functions of the smart contracts.
 
 ```ts
 const { data: totalCounter } = useScaffoldContractRead({
@@ -300,8 +302,8 @@ We have github workflow setup checkout `.github/workflows/lint.yaml` which runs 
 
 To disable it, **delete `.github` directory**
 
-## Contributing to Scaffold-ETH 2
+## Contributing
 
-We welcome contributions to Scaffold-ETH 2!
+Contributions to Scaffold-ETH 2 and Syron are welcome!
 
 Please see [CONTRIBUTING.MD](https://github.com/scaffold-eth/scaffold-eth-2/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Scaffold-ETH 2.
