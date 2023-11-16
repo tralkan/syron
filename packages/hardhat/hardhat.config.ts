@@ -15,9 +15,11 @@ const deployerPrivateKey =
 // If not set, it uses ours Etherscan default API key.
 const etherscanApiKey = process.env.ETHERSCAN_API_KEY || "DNXJA8RX2Q3VZ4URQIWP7Z68CJXQZSC6AW";
 
+//@notice add your private key with zkETH
+const eoa = process.env.ACCOUNT_PRIVATE_KEY ?? "50d93bd0114305bcf7b4ada311a84067e0b7e123c7f2891c4e65da646b1e26c1"; //0xC68d43b78b5B720b0A1392269aFaC939DDfA40EE
 const config: HardhatUserConfig = {
   solidity: {
-    version: "0.8.20",
+    version: "0.8.21",
     settings: {
       optimizer: {
         enabled: true,
@@ -34,6 +36,10 @@ const config: HardhatUserConfig = {
     },
   },
   networks: {
+    zkEVM: {
+      url: `https://rpc.public.zkevm-test.net`,
+      accounts: [eoa!],
+    },
     // View the networks that are pre-configured.
     // If the network you are looking for is not here you can add new network settings
     hardhat: {
